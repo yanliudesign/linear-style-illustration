@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8" />
+<title>Example — Fan-in Funnel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400;1,700&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --stage-bg: #06070a; --ink: #eaeaf2; --ink-dim: #7a7d90;
+    --purple: #7b7fff; --cyan: #6ce0d6;
+    --font-display: 'Carlito', 'Calibri', 'Inter Tight', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+* { box-sizing: border-box; }
+html,body { margin:0; background:var(--stage-bg); font-family:var(--font-display); }
+.canvas { position:relative; width:780px; height:260px; padding:24px 28px; overflow:hidden; }
+.grid-bg { position:absolute; inset:0; background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size:80px 80px; pointer-events:none; }
+.vignette { position:absolute; inset:0; background: radial-gradient(ellipse at 50% 50%, transparent 25%, rgba(0,0,0,0.65) 100%); pointer-events:none; }
+.orb { position:absolute; width:700px; height:700px; border-radius:50%; left:-180px; bottom:-220px; background: radial-gradient(circle at 50% 50%, rgba(108,224,214,0.32), transparent 60%); filter: blur(60px); opacity:0.9; pointer-events:none; }
+.section-num { font-family:var(--font-mono); font-size:12px; color:var(--cyan); letter-spacing:0.24em; text-transform:uppercase; display:flex; align-items:center; gap:14px; position:relative; z-index:2; margin-bottom:14px; }
+.section-num .bar { width:36px; height:1px; background:var(--cyan); opacity:0.6; }
+svg { position:relative; z-index:2; display:block; width:100%; height:auto; }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="grid-bg"></div>
+  <div class="orb"></div>
+  <div class="vignette"></div>
+
+  <div class="section-num"><span class="bar"></span>FAN-IN FUNNEL — many signals in, one proposed decision out</div>
+
+  <svg viewBox="0 0 740 270" xmlns="http://www.w3.org/2000/svg">
+    <g font-family="JetBrains Mono, monospace" font-size="14" fill="#eaeaf2">
+      <circle cx="10" cy="26" r="6" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.45)" stroke-width="1"/>
+      <text x="26" y="30">Support tickets</text>
+      <circle cx="10" cy="76" r="6" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.45)" stroke-width="1"/>
+      <text x="26" y="80">User interviews</text>
+      <circle cx="10" cy="126" r="6" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.45)" stroke-width="1"/>
+      <text x="26" y="130">Bug reports</text>
+      <circle cx="10" cy="176" r="6" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.45)" stroke-width="1"/>
+      <text x="26" y="180">Meeting notes</text>
+    </g>
+
+    <g stroke="rgba(108,224,214,0.4)" stroke-width="1.2" fill="none">
+      <path d="M 18 26  Q 140 26  180 105"/>
+      <path d="M 18 76  Q 140 76  180 105"/>
+      <path d="M 18 126 Q 140 126 180 105"/>
+      <path d="M 18 176 Q 140 176 180 105"/>
+    </g>
+
+    <rect x="180" y="65" width="180" height="90" rx="14" fill="rgba(108,224,214,0.09)" stroke="rgba(108,224,214,0.75)" stroke-width="1.6"/>
+    <text x="270" y="98" text-anchor="middle" fill="#6ce0d6" font-family="JetBrains Mono, monospace" font-size="13" letter-spacing="2.5">PROPOSED</text>
+    <text x="270" y="130" text-anchor="middle" fill="#eaeaf2" font-family="Inter Tight, sans-serif" font-size="24" font-weight="600">Opportunity</text>
+
+    <line x1="360" y1="110" x2="470" y2="110" stroke="rgba(123,127,255,0.75)" stroke-width="1.6"/>
+    <polygon points="470,110 458,104 458,116" fill="rgba(123,127,255,0.85)"/>
+    <text x="415" y="94" text-anchor="middle" fill="#7a7d90" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="1">HUMAN APPROVES</text>
+    <text x="415" y="128" text-anchor="middle" fill="#7b7fff" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="1">↳ OR REDIRECT</text>
+
+    <rect x="478" y="65" width="260" height="90" rx="14" fill="rgba(123,127,255,0.11)" stroke="rgba(123,127,255,0.75)" stroke-width="1.6"/>
+    <text x="608" y="96" text-anchor="middle" fill="#7b7fff" font-family="JetBrains Mono, monospace" font-size="13" letter-spacing="2.5">INITIATIVE</text>
+    <text x="608" y="122" text-anchor="middle" fill="#eaeaf2" font-family="Inter Tight, sans-serif" font-size="17" font-weight="600">Projects + issues auto-created</text>
+    <text x="608" y="142" text-anchor="middle" fill="#7a7d90" font-family="Inter Tight, sans-serif" font-size="12">Owner assigned · timeline drafted</text>
+  </svg>
+</div>
+</body></html>

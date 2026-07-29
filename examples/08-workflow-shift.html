@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8" />
+<title>Example — Workflow Shift</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400;1,700&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --stage-bg: #06070a; --ink: #eaeaf2; --ink-dim: #7a7d90;
+    --purple: #7b7fff; --cyan: #6ce0d6;
+    --font-display: 'Carlito', 'Calibri', 'Inter Tight', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+* { box-sizing: border-box; }
+html,body { margin:0; background:var(--stage-bg); font-family:var(--font-display); }
+.canvas { position:relative; width:500px; height:475px; padding:22px 24px; overflow:hidden; }
+.grid-bg { position:absolute; inset:0; background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size:60px 60px; pointer-events:none; }
+.vignette { position:absolute; inset:0; background: radial-gradient(ellipse at 50% 50%, transparent 25%, rgba(0,0,0,0.65) 100%); pointer-events:none; }
+.orb { position:absolute; width:460px; height:460px; border-radius:50%; left:50%; bottom:-220px; transform:translateX(-50%); background: radial-gradient(circle at 50% 50%, rgba(123,127,255,0.3), transparent 60%); filter: blur(50px); opacity:0.9; pointer-events:none; }
+.section-num { font-family:var(--font-mono); font-size:11px; color:var(--cyan); letter-spacing:0.22em; text-transform:uppercase; display:flex; align-items:center; gap:12px; position:relative; z-index:2; margin-bottom:14px; }
+.section-num .bar { width:28px; height:1px; background:var(--cyan); opacity:0.6; }
+svg { position:relative; z-index:2; display:block; width:100%; height:auto; }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="grid-bg"></div>
+  <div class="orb"></div>
+  <div class="vignette"></div>
+
+  <div class="section-num"><span class="bar"></span>WORKFLOW SHIFT — a pipeline evolving into a coordinated hub</div>
+
+  <svg viewBox="0 0 540 470" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="6" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+    <!-- TODAY row -->
+    <text x="20" y="24" fill="#464858" font-family="JetBrains Mono, monospace" font-size="11" letter-spacing="2">TODAY</text>
+    <g font-family="Inter Tight, sans-serif" font-size="13" fill="#eaeaf2">
+      <rect x="10"  y="36" width="88" height="34" rx="17" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.25)"/>
+      <text x="54" y="58" text-anchor="middle">Human</text>
+      <rect x="128" y="36" width="88" height="34" rx="17" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.25)"/>
+      <text x="172" y="58" text-anchor="middle">Issue</text>
+      <rect x="246" y="36" width="88" height="34" rx="17" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.25)"/>
+      <text x="290" y="58" text-anchor="middle">PR</text>
+      <rect x="364" y="36" width="88" height="34" rx="17" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.25)"/>
+      <text x="408" y="58" text-anchor="middle">Release</text>
+    </g>
+    <g stroke="rgba(255,255,255,0.25)" stroke-width="1.2">
+      <line x1="98" y1="53" x2="128" y2="53"/>
+      <line x1="216" y1="53" x2="246" y2="53"/>
+      <line x1="334" y1="53" x2="364" y2="53"/>
+    </g>
+
+    <!-- divider -->
+    <line x1="10" y1="100" x2="452" y2="100" stroke="rgba(255,255,255,0.12)" stroke-dasharray="3 4"/>
+    <rect x="146" y="86" width="180" height="28" rx="14" fill="#0b0c10" stroke="rgba(181,139,255,0.5)"/>
+    <text x="236" y="105" text-anchor="middle" fill="#b58bff" font-family="JetBrains Mono, monospace" font-size="10.5" letter-spacing="1.5">AI TEAMMATES ARRIVE</text>
+
+    <!-- TOMORROW row -->
+    <text x="20" y="146" fill="#464858" font-family="JetBrains Mono, monospace" font-size="11" letter-spacing="2">TOMORROW</text>
+
+    <rect x="10" y="160" width="90" height="34" rx="17" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.25)"/>
+    <text x="55" y="182" text-anchor="middle" fill="#eaeaf2" font-family="Inter Tight, sans-serif" font-size="13">PM</text>
+    <line x1="100" y1="177" x2="190" y2="230" stroke="rgba(255,255,255,0.3)" stroke-width="1.2"/>
+
+    <!-- glowing hub -->
+    <g filter="url(#glow)">
+      <circle cx="237" cy="255" r="58" fill="rgba(108,224,214,0.12)" stroke="#6ce0d6" stroke-width="2"/>
+    </g>
+    <text x="237" y="250" text-anchor="middle" fill="#6ce0d6" font-family="Inter Tight, sans-serif" font-size="17" font-weight="700">Router</text>
+    <text x="237" y="270" text-anchor="middle" fill="#6ce0d6" font-family="JetBrains Mono, monospace" font-size="9.5" letter-spacing="1.5">COORDINATOR</text>
+
+    <!-- fan-out to AI teammates -->
+    <g stroke="rgba(123,127,255,0.65)" stroke-width="1.2" fill="none">
+      <path d="M 280 220 Q 330 190 370 175"/>
+      <path d="M 292 235 Q 350 220 400 220"/>
+      <path d="M 292 275 Q 350 290 400 300"/>
+      <path d="M 280 300 Q 330 330 375 345"/>
+    </g>
+    <g font-family="Inter Tight, sans-serif" font-size="11.5" fill="#eaeaf2">
+      <rect x="374" y="158" width="112" height="30" rx="8" fill="rgba(123,127,255,0.1)" stroke="rgba(123,127,255,0.5)"/>
+      <text x="430" y="177" text-anchor="middle">AI Designer</text>
+      <rect x="398" y="204" width="112" height="30" rx="8" fill="rgba(123,127,255,0.1)" stroke="rgba(123,127,255,0.5)"/>
+      <text x="454" y="223" text-anchor="middle">AI Engineer</text>
+      <rect x="398" y="286" width="112" height="30" rx="8" fill="rgba(123,127,255,0.1)" stroke="rgba(123,127,255,0.5)"/>
+      <text x="454" y="305" text-anchor="middle">AI QA</text>
+      <rect x="372" y="330" width="120" height="30" rx="8" fill="rgba(123,127,255,0.1)" stroke="rgba(123,127,255,0.5)"/>
+      <text x="432" y="349" text-anchor="middle">AI Docs</text>
+    </g>
+
+    <!-- convergence to release -->
+    <g stroke="rgba(108,224,214,0.45)" stroke-width="1.2" stroke-dasharray="3 4" fill="none">
+      <path d="M 490 188 Q 470 400 300 400"/>
+      <path d="M 454 234 Q 440 400 300 400"/>
+      <path d="M 454 316 Q 440 400 300 400"/>
+      <path d="M 492 345 Q 470 400 300 400"/>
+    </g>
+    <rect x="200" y="386" width="100" height="30" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.25)"/>
+    <text x="250" y="405" text-anchor="middle" fill="#eaeaf2" font-family="Inter Tight, sans-serif" font-size="12.5">Release</text>
+
+    <text x="250" y="450" text-anchor="middle" fill="#7a7d90" font-family="JetBrains Mono, monospace" font-size="11" letter-spacing="1.5">ONE HUMAN · MANY TEAMMATES · ONE FLOW</text>
+  </svg>
+</div>
+</body></html>

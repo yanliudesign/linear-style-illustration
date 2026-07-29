@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8" />
+<title>Example — Signal Convergence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400;1,700&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --stage-bg: #06070a; --ink: #eaeaf2; --ink-dim: #7a7d90;
+    --purple: #7b7fff; --cyan: #6ce0d6; --lilac: #b58bff;
+    --font-display: 'Carlito', 'Calibri', 'Inter Tight', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+* { box-sizing: border-box; }
+html,body { margin:0; background:var(--stage-bg); font-family:var(--font-display); }
+.canvas { position:relative; width:780px; height:390px; padding:24px 28px; overflow:hidden; display:flex; flex-direction:column; }
+.grid-bg { position:absolute; inset:0; background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size:80px 80px; pointer-events:none; }
+.vignette { position:absolute; inset:0; background: radial-gradient(ellipse at 50% 50%, transparent 25%, rgba(0,0,0,0.65) 100%); pointer-events:none; }
+.orb { position:absolute; width:700px; height:700px; border-radius:50%; left:50%; top:-260px; transform:translateX(-50%); background: radial-gradient(circle at 50% 50%, rgba(181,139,255,0.32), transparent 60%); filter: blur(60px); opacity:0.85; pointer-events:none; }
+.section-num { font-family:var(--font-mono); font-size:12px; color:var(--lilac); letter-spacing:0.24em; text-transform:uppercase; display:flex; align-items:center; gap:14px; position:relative; z-index:2; margin-bottom:16px; }
+.section-num .bar { width:36px; height:1px; background:var(--lilac); opacity:0.6; }
+
+.row { position:relative; z-index:2; display:flex; align-items:center; justify-content:center; gap:10px; margin-bottom:12px; }
+.chip { flex:1; max-width:190px; border:1.5px solid rgba(181,139,255,0.35); border-radius:10px; padding:10px 12px; background:rgba(181,139,255,0.06); text-align:center; }
+.chip .tag { font-family:var(--font-mono); font-size:10px; color:var(--lilac); letter-spacing:2px; }
+.chip .val { font-family:var(--font-display); font-size:15px; color:var(--ink); margin-top:4px; font-weight:600; }
+.plus { font-size:20px; color:var(--ink-dim); font-weight:300; }
+.arrow { text-align:center; font-family:var(--font-mono); font-size:18px; color:rgba(181,139,255,0.7); margin:4px 0; position:relative; z-index:2; }
+.banner { position:relative; z-index:2; border:2px solid rgba(181,139,255,0.55); border-radius:12px; padding:12px 20px; background:rgba(181,139,255,0.1); text-align:center; margin-bottom:4px; }
+.banner .tag { font-family:var(--font-mono); font-size:11px; color:var(--lilac); letter-spacing:2.5px; margin-bottom:4px; }
+.banner .msg { font-size:17px; color:var(--ink); font-weight:500; }
+.banner .msg b { color:var(--lilac); }
+
+.step { position:relative; z-index:2; border-radius:10px; padding:10px 18px; display:flex; align-items:center; gap:16px; margin-top:8px; }
+.step .n { font-family:var(--font-mono); font-size:16px; letter-spacing:2px; font-weight:600; min-width:34px; }
+.step .t { font-size:16px; color:var(--ink); font-weight:600; }
+.step .d { font-size:12px; color:var(--ink-dim); margin-top:1px; }
+.step.cyan { border:1.5px solid rgba(108,224,214,0.5); background:rgba(108,224,214,0.07); }
+.step.cyan .n { color:var(--cyan); }
+.step.cyan .t em { color:var(--cyan); font-style:normal; }
+.step.purple { border:1.5px solid rgba(123,127,255,0.55); background:rgba(123,127,255,0.09); }
+.step.purple .n { color:var(--purple); }
+.step.purple .t em { color:var(--purple); font-style:normal; }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="grid-bg"></div>
+  <div class="orb"></div>
+  <div class="vignette"></div>
+
+  <div class="section-num"><span class="bar"></span>SIGNAL CONVERGENCE — fragments become one detected pattern</div>
+
+  <div class="row">
+    <div class="chip"><div class="tag">SIGNAL</div><div class="val">Customer feedback</div></div>
+    <div class="plus">+</div>
+    <div class="chip"><div class="tag">SIGNAL</div><div class="val">Support tickets</div></div>
+    <div class="plus">+</div>
+    <div class="chip"><div class="tag">SIGNAL</div><div class="val">Meeting notes</div></div>
+  </div>
+
+  <div class="arrow">↓</div>
+
+  <div class="banner">
+    <div class="tag">✦ SYSTEM DETECTS</div>
+    <div class="msg">They are all describing the <b>same problem</b>.</div>
+  </div>
+
+  <div class="arrow">↓</div>
+
+  <div class="step cyan"><div class="n">01</div><div><div class="t">Creates <em>Opportunity</em></div><div class="d">Names the emerging pattern · links all evidence.</div></div></div>
+  <div class="step purple"><div class="n">02</div><div><div class="t">Suggests <em>Initiative</em></div><div class="d">Drafts goal, success metrics, timeline.</div></div></div>
+</div>
+</body></html>

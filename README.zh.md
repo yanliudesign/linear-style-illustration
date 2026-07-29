@@ -8,7 +8,7 @@
 
 [![License](https://img.shields.io/badge/LICENSE-MIT-4c8bf5?style=flat-square&labelColor=333)](./LICENSE)
 [![Version](https://img.shields.io/badge/VERSION-1.0.0-2ea44f?style=flat-square&labelColor=333)]()
-[![Examples](https://img.shields.io/badge/EXAMPLES-3-2ea44f?style=flat-square&labelColor=333)](./examples)
+[![Examples](https://img.shields.io/badge/EXAMPLES-8-2ea44f?style=flat-square&labelColor=333)](./examples)
 [![Stars](https://img.shields.io/github/stars/yanliudesign/linear-style-illustration?style=flat-square&label=STARS&color=e37f2c&labelColor=333)](https://github.com/yanliudesign/linear-style-illustration/stargazers)
 
 [![Claude Code](https://img.shields.io/badge/Claude_Code-Skill-d97757?style=flat-square&labelColor=1a1a1a&logo=anthropic&logoColor=white)](https://claude.ai/code)
@@ -36,6 +36,29 @@
   <br><sub><b>Layered stack</b> —— 一个薄内核支撑起上层一切</sub>
 </p>
 
+更多示例，改编（并脱敏）自一份真实的产品 pitch deck：
+
+<p align="center">
+  <img src="./examples/08-workflow-shift.png" width="100%" alt="Workflow shift diagram">
+  <br><sub><b>Workflow shift</b> —— AI 队友加入后，线性流水线演变为协调中枢</sub>
+</p>
+<p align="center">
+  <img src="./examples/05-signal-convergence.png" width="100%" alt="Signal convergence diagram">
+  <br><sub><b>Signal convergence</b> —— 分散信号被识别为同一个模式，再路由到下一步</sub>
+</p>
+<p align="center">
+  <img src="./examples/06-fan-in-funnel.png" width="100%" alt="Fan-in funnel diagram">
+  <br><sub><b>Fan-in funnel</b> —— 多路信号汇聚成一个提案，由人工决策把关</sub>
+</p>
+<p align="center">
+  <img src="./examples/07-hierarchy-waterfall.png" width="100%" alt="Hierarchy waterfall diagram">
+  <br><sub><b>Hierarchy waterfall</b> —— 新的一层被嵌入到已有的组织/工作层级中</sub>
+</p>
+<p align="center">
+  <img src="./examples/04-status-panel.png" width="100%" alt="Status panel diagram">
+  <br><sub><b>Status panel</b> —— 终端风格的系统状态读数面板</sub>
+</p>
+
 ## 目录
 
 | 文件 | 作用 |
@@ -43,7 +66,7 @@
 | [`SKILL.md`](./SKILL.md) | Skill 主入口 —— Claude 读它来判断何时触发、该用哪种构图 |
 | [`references/style-tokens.md`](./references/style-tokens.md) | 可直接复制的 CSS/HTML/SVG：字体、`:root` 色彩变量、背景系统（网格/光晕/暗角）、文字组件、箭头 marker 定义、节点填充/描边配方 |
 | [`references/patterns.md`](./references/patterns.md) | 7 种图表原型 —— 胶囊链、Hub-and-spoke、分层结构、汇聚漏斗、状态机、飞轮循环、编号瀑布流 —— 均为可直接改的 SVG/HTML 代码块 |
-| [`examples/`](./examples/) | 3 张渲染好的示例图 + 对应源码 |
+| [`examples/`](./examples/) | 8 张渲染好的示例图 + 对应源码 |
 
 ## 三条铁律
 

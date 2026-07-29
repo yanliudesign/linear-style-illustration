@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8" />
+<title>Example — Status Panel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400;1,700&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --stage-bg: #06070a; --ink: #eaeaf2; --ink-dim: #7a7d90; --ink-mute: #464858; --line: rgba(255,255,255,0.14);
+    --purple: #7b7fff; --cyan: #6ce0d6;
+    --font-display: 'Carlito', 'Calibri', 'Inter Tight', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+* { box-sizing: border-box; }
+html,body { margin:0; background:var(--stage-bg); font-family:var(--font-display); }
+.canvas { position:relative; width:600px; height:380px; padding:26px 30px; overflow:hidden; display:flex; flex-direction:column; }
+.grid-bg { position:absolute; inset:0; background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size:80px 80px; pointer-events:none; }
+.vignette { position:absolute; inset:0; background: radial-gradient(ellipse at 50% 50%, transparent 25%, rgba(0,0,0,0.65) 100%); pointer-events:none; }
+.orb { position:absolute; width:600px; height:600px; border-radius:50%; right:-140px; top:-140px; background: radial-gradient(circle at 35% 35%, rgba(108,224,214,0.4) 0%, transparent 55%); filter: blur(60px); opacity:0.9; pointer-events:none; }
+.section-num { font-family:var(--font-mono); font-size:12px; color:var(--cyan); letter-spacing:0.24em; text-transform:uppercase; display:flex; align-items:center; gap:14px; position:relative; z-index:2; margin-bottom:18px; }
+.section-num .bar { width:36px; height:1px; background:var(--cyan); opacity:0.6; }
+
+.panel { position:relative; z-index:2; border:1px solid var(--line); border-radius:14px; background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.005)); padding:22px 24px; font-family:var(--font-mono); font-size:14px; color:var(--ink-dim); line-height:1.6; }
+.panel .p-head { display:flex; align-items:center; justify-content:space-between; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink-mute); padding-bottom:14px; margin-bottom:14px; border-bottom:1px solid var(--line); }
+.panel .p-head b { color:var(--ink); font-weight:500; }
+.panel .line { display:flex; gap:12px; align-items:baseline; padding:5px 0; }
+.panel .line .k { color:var(--purple); min-width:88px; }
+.panel .line .v { color:var(--ink); flex:1; }
+.panel .line.hi .v { color:var(--cyan); }
+.panel .caret { color:var(--cyan); animation: pulse 1.2s ease-in-out infinite; }
+.panel .exit { margin-top:12px; padding:10px 12px; border:1px solid rgba(108,224,214,0.35); background:rgba(108,224,214,0.06); border-radius:8px; font-family:var(--font-display); font-size:14px; color:#a1a1aa; }
+.panel .exit .code { display:block; color:var(--cyan); font-family:var(--font-mono); font-size:10px; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:4px; }
+.panel .exit .msg { color:#f7f8f8; }
+@keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.2;} }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="grid-bg"></div>
+  <div class="orb"></div>
+  <div class="vignette"></div>
+
+  <div class="section-num"><span class="bar"></span>STATUS PANEL — a live readout of system state</div>
+
+  <div class="panel">
+    <div class="p-head"><span>KERNEL</span><b>v1.0 · COMPLETE</b></div>
+    <div class="line"><span class="k">module.01</span><span class="v">Signal Detection <span style="color:#6ce0d6;">✓</span></span></div>
+    <div class="line"><span class="k">module.02</span><span class="v">Human ↔ Agent Handoff <span style="color:#6ce0d6;">✓</span></span></div>
+    <div class="line"><span class="k">module.03</span><span class="v">Team Alignment <span style="color:#6ce0d6;">✓</span></span></div>
+    <div class="line hi"><span class="k">→ output</span><span class="v">One operating layer for high-performing teams. <span class="caret">▊</span></span></div>
+    <div class="exit"><span class="code">exit code · 0</span><span class="msg">Ready to build.</span></div>
+  </div>
+</div>
+</body></html>

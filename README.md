@@ -8,7 +8,7 @@
 
 [![License](https://img.shields.io/badge/LICENSE-MIT-4c8bf5?style=flat-square&labelColor=333)](./LICENSE)
 [![Version](https://img.shields.io/badge/VERSION-1.0.0-2ea44f?style=flat-square&labelColor=333)]()
-[![Examples](https://img.shields.io/badge/EXAMPLES-3-2ea44f?style=flat-square&labelColor=333)](./examples)
+[![Examples](https://img.shields.io/badge/EXAMPLES-8-2ea44f?style=flat-square&labelColor=333)](./examples)
 [![Stars](https://img.shields.io/github/stars/yanliudesign/linear-style-illustration?style=flat-square&label=STARS&color=e37f2c&labelColor=333)](https://github.com/yanliudesign/linear-style-illustration/stargazers)
 
 [![Claude Code](https://img.shields.io/badge/Claude_Code-Skill-d97757?style=flat-square&labelColor=1a1a1a&logo=anthropic&logoColor=white)](https://claude.ai/code)
@@ -36,6 +36,29 @@ Not a generic diagramming tool. Not Mermaid, not a whiteboard export. This is th
   <br><sub><b>Layered stack</b> — a thin core sits under everything</sub>
 </p>
 
+More examples, adapted (and redacted) from a real product pitch deck:
+
+<p align="center">
+  <img src="./examples/08-workflow-shift.png" width="100%" alt="Workflow shift diagram">
+  <br><sub><b>Workflow shift</b> — a linear pipeline evolves into a coordinator hub once AI teammates join</sub>
+</p>
+<p align="center">
+  <img src="./examples/05-signal-convergence.png" width="100%" alt="Signal convergence diagram">
+  <br><sub><b>Signal convergence</b> — scattered signals are detected as one pattern, then routed into next steps</sub>
+</p>
+<p align="center">
+  <img src="./examples/06-fan-in-funnel.png" width="100%" alt="Fan-in funnel diagram">
+  <br><sub><b>Fan-in funnel</b> — many signals converge into one proposal, gated by a human decision</sub>
+</p>
+<p align="center">
+  <img src="./examples/07-hierarchy-waterfall.png" width="100%" alt="Hierarchy waterfall diagram">
+  <br><sub><b>Hierarchy waterfall</b> — a new layer slotted into an existing org/work stack</sub>
+</p>
+<p align="center">
+  <img src="./examples/04-status-panel.png" width="100%" alt="Status panel diagram">
+  <br><sub><b>Status panel</b> — a terminal-style readout for reporting system state</sub>
+</p>
+
 ## What's inside
 
 | File | Purpose |
@@ -43,7 +66,7 @@ Not a generic diagramming tool. Not Mermaid, not a whiteboard export. This is th
 | [`SKILL.md`](./SKILL.md) | Skill entry point — Claude reads this to decide when / how to trigger, and which archetype fits |
 | [`references/style-tokens.md`](./references/style-tokens.md) | Copy-paste CSS/HTML/SVG: fonts, `:root` color vars, background system (grid/orb/vignette), text components, arrow marker defs, node fill/stroke recipes |
 | [`references/patterns.md`](./references/patterns.md) | 7 diagram archetypes — pill-chain, hub-and-spoke, layered stack, fan-in funnel, state machine, flywheel/cycle, numbered waterfall — as adaptable SVG/HTML blocks |
-| [`examples/`](./examples/) | 3 rendered example diagrams with their source HTML |
+| [`examples/`](./examples/) | 8 rendered example diagrams with their source HTML |
 
 ## Three rules the skill lives by
 

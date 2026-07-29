@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8" />
+<title>Example — Hierarchy Waterfall</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400;1,700&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --stage-bg: #06070a; --ink: #eaeaf2; --line: rgba(255,255,255,0.14);
+    --purple: #7b7fff; --cyan: #6ce0d6; --ink-mute: #464858;
+    --font-display: 'Carlito', 'Calibri', 'Inter Tight', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+* { box-sizing: border-box; }
+html,body { margin:0; background:var(--stage-bg); font-family:var(--font-display); }
+.canvas { position:relative; width:480px; height:470px; padding:24px 26px; overflow:hidden; display:flex; flex-direction:column; }
+.grid-bg { position:absolute; inset:0; background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size:60px 60px; pointer-events:none; }
+.vignette { position:absolute; inset:0; background: radial-gradient(ellipse at 50% 50%, transparent 25%, rgba(0,0,0,0.65) 100%); pointer-events:none; }
+.orb { position:absolute; width:460px; height:460px; border-radius:50%; right:-160px; top:-160px; background: radial-gradient(circle at 40% 40%, rgba(108,224,214,0.32), transparent 55%); filter: blur(50px); opacity:0.9; pointer-events:none; }
+.section-num { font-family:var(--font-mono); font-size:11px; color:var(--cyan); letter-spacing:0.22em; text-transform:uppercase; display:flex; align-items:center; gap:12px; position:relative; z-index:2; margin-bottom:20px; }
+.section-num .bar { width:28px; height:1px; background:var(--cyan); opacity:0.6; }
+
+.hierarchy { position:relative; z-index:2; display:flex; flex-direction:column; align-items:stretch; gap:8px; font-family:var(--font-mono); font-size:14px; flex:1; justify-content:center; }
+.h-item { padding:14px 20px; border:1px solid var(--line); border-radius:8px; background:rgba(255,255,255,0.03); color:var(--ink); letter-spacing:0.12em; text-transform:uppercase; text-align:center; position:relative; }
+.h-item.hi { border-color:rgba(108,224,214,0.4); background:rgba(108,224,214,0.06); color:var(--cyan); }
+.h-item.new { border-color:rgba(123,127,255,0.55); background:rgba(123,127,255,0.10); color:var(--purple); }
+.h-item.new::after { content:"NEW"; position:absolute; right:16px; top:50%; transform:translateY(-50%); font-size:9px; color:var(--cyan); letter-spacing:0.2em; }
+.h-arrow { color:var(--ink-mute); font-size:13px; text-align:center; }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="grid-bg"></div>
+  <div class="orb"></div>
+  <div class="vignette"></div>
+
+  <div class="section-num"><span class="bar"></span>WATERFALL — a new layer inside an existing stack</div>
+
+  <div class="hierarchy">
+    <div class="h-item hi">Company Goal</div>
+    <div class="h-arrow">↓</div>
+    <div class="h-item new">Opportunity</div>
+    <div class="h-arrow">↓</div>
+    <div class="h-item">Project</div>
+    <div class="h-arrow">↓</div>
+    <div class="h-item">Issue</div>
+    <div class="h-arrow">↓</div>
+    <div class="h-item">Execution</div>
+  </div>
+</div>
+</body></html>
