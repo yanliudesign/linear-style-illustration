@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8" />
+<title>Example — Layered Stack</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400;1,700&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --stage-bg: #06070a; --ink: #eaeaf2; --ink-dim: #7a7d90;
+    --purple: #7b7fff; --cyan: #6ce0d6; --lilac: #b58bff;
+    --font-display: 'Carlito', 'Calibri', 'Inter Tight', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+* { box-sizing: border-box; }
+html,body { margin:0; background:var(--stage-bg); font-family:var(--font-display); }
+.canvas { position:relative; width:780px; height:458px; padding:28px 31px; overflow:hidden; }
+.grid-bg { position:absolute; inset:0; background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size:80px 80px; pointer-events:none; }
+.vignette { position:absolute; inset:0; background: radial-gradient(ellipse at 50% 50%, transparent 25%, rgba(0,0,0,0.65) 100%); pointer-events:none; }
+.orb { position:absolute; width:700px; height:700px; border-radius:50%; left:50%; top:50%; transform:translate(-50%,-50%); background: radial-gradient(circle at 50% 50%, rgba(181,139,255,0.32), transparent 60%); filter: blur(60px); opacity:0.85; pointer-events:none; }
+.section-num { font-family:var(--font-mono); font-size:12px; color:var(--lilac); letter-spacing:0.24em; text-transform:uppercase; display:flex; align-items:center; gap:14px; position:relative; z-index:2; margin-bottom:14px; }
+.section-num .bar { width:36px; height:1px; background:var(--lilac); opacity:0.6; }
+svg { position:relative; z-index:2; display:block; width:100%; height:auto; }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="grid-bg"></div>
+  <div class="orb"></div>
+  <div class="vignette"></div>
+
+  <div class="section-num"><span class="bar"></span>LAYERED STACK — A thin core sits under everything</div>
+
+  <svg viewBox="0 0 860 480" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="coreGlow" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="rgba(108,224,214,0.18)"/>
+        <stop offset="100%" stop-color="rgba(123,127,255,0.14)"/>
+      </linearGradient>
+    </defs>
+
+    <rect x="0" y="0" width="860" height="130" rx="16" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.14)"/>
+    <text x="24" y="30" fill="rgba(232,238,255,0.8)" font-family="JetBrains Mono, monospace" font-size="11" font-weight="600" letter-spacing="2.5">LAYER 3 · APPLICATIONS</text>
+    <rect x="24" y="48" width="140" height="42" rx="21" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.28)"/>
+    <text x="94" y="74" text-anchor="middle" fill="#e8eeff" font-family="Inter Tight, sans-serif" font-size="14" font-weight="600">Dashboard</text>
+    <rect x="180" y="48" width="140" height="42" rx="21" fill="rgba(181,139,255,0.1)" stroke="rgba(181,139,255,0.5)"/>
+    <text x="250" y="74" text-anchor="middle" fill="#e8eeff" font-family="Inter Tight, sans-serif" font-size="14" font-weight="600">Assistant</text>
+    <rect x="336" y="48" width="140" height="42" rx="21" fill="rgba(108,224,214,0.08)" stroke="rgba(108,224,214,0.4)"/>
+    <text x="406" y="74" text-anchor="middle" fill="#e8eeff" font-family="Inter Tight, sans-serif" font-size="14" font-weight="600">Integrations</text>
+
+    <line x1="430" y1="130" x2="430" y2="160" stroke="rgba(108,224,214,0.6)" stroke-width="1.5" stroke-dasharray="3 5"/>
+
+    <rect x="0" y="160" width="860" height="200" rx="18" fill="url(#coreGlow)" stroke="#6ce0d6" stroke-width="2" filter="drop-shadow(0 0 30px rgba(108,224,214,0.25))"/>
+    <text x="24" y="192" fill="#6ce0d6" font-family="JetBrains Mono, monospace" font-size="11" letter-spacing="2.5">LAYER 2 · THE CORE</text>
+    <text x="24" y="230" fill="#e8eeff" font-family="Inter Tight, sans-serif" font-size="28" font-weight="700">Kernel</text>
+    <text x="24" y="254" fill="rgba(232,238,255,0.7)" font-family="Inter Tight, sans-serif" font-size="14">Routes, remembers, and enforces trust for everything above it.</text>
+
+    <rect x="24" y="278" width="130" height="56" rx="12" fill="rgba(0,0,0,0.25)" stroke="rgba(108,224,214,0.4)"/>
+    <text x="89" y="311" text-anchor="middle" fill="#eaeaf2" font-family="JetBrains Mono, monospace" font-size="12" letter-spacing="1.5">ROUTE</text>
+    <rect x="168" y="278" width="130" height="56" rx="12" fill="rgba(0,0,0,0.25)" stroke="rgba(108,224,214,0.4)"/>
+    <text x="233" y="311" text-anchor="middle" fill="#eaeaf2" font-family="JetBrains Mono, monospace" font-size="12" letter-spacing="1.5">STATE</text>
+    <rect x="312" y="278" width="130" height="56" rx="12" fill="rgba(0,0,0,0.25)" stroke="rgba(108,224,214,0.4)"/>
+    <text x="377" y="311" text-anchor="middle" fill="#eaeaf2" font-family="JetBrains Mono, monospace" font-size="12" letter-spacing="1.5">MEMORY</text>
+    <rect x="456" y="278" width="130" height="56" rx="12" fill="rgba(0,0,0,0.25)" stroke="rgba(108,224,214,0.4)"/>
+    <text x="521" y="311" text-anchor="middle" fill="#eaeaf2" font-family="JetBrains Mono, monospace" font-size="12" letter-spacing="1.5">TRUST</text>
+
+    <line x1="430" y1="360" x2="430" y2="390" stroke="rgba(181,139,255,0.6)" stroke-width="1.5" stroke-dasharray="3 5"/>
+
+    <rect x="0" y="390" width="860" height="90" rx="16" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.14)"/>
+    <text x="24" y="418" fill="rgba(232,238,255,0.8)" font-family="JetBrains Mono, monospace" font-size="11" font-weight="600" letter-spacing="2.5">LAYER 1 · SIGNALS</text>
+    <rect x="24" y="432" width="120" height="36" rx="18" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.22)"/>
+    <text x="84" y="455" text-anchor="middle" fill="#e8eeff" font-family="Inter Tight, sans-serif" font-size="13" font-weight="600">Events</text>
+    <rect x="156" y="432" width="120" height="36" rx="18" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.22)"/>
+    <text x="216" y="455" text-anchor="middle" fill="#e8eeff" font-family="Inter Tight, sans-serif" font-size="13" font-weight="600">Metrics</text>
+    <rect x="288" y="432" width="120" height="36" rx="18" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.22)"/>
+    <text x="348" y="455" text-anchor="middle" fill="#e8eeff" font-family="Inter Tight, sans-serif" font-size="13" font-weight="600">Feedback</text>
+  </svg>
+</div>
+</body></html>

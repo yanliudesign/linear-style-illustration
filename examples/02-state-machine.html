@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8" />
+<title>Example — State Machine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400;1,700&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --stage-bg: #06070a; --ink: #eaeaf2; --ink-dim: #7a7d90;
+    --purple: #7b7fff; --cyan: #6ce0d6; --warn: #f0b464;
+    --font-display: 'Carlito', 'Calibri', 'Inter Tight', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+* { box-sizing: border-box; }
+html,body { margin:0; background:var(--stage-bg); font-family:var(--font-display); }
+.canvas { position:relative; width:780px; height:280px; padding:22px 24px; overflow:hidden; }
+.grid-bg { position:absolute; inset:0; background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size:80px 80px; pointer-events:none; }
+.vignette { position:absolute; inset:0; background: radial-gradient(ellipse at 50% 50%, transparent 25%, rgba(0,0,0,0.65) 100%); pointer-events:none; }
+.orb { position:absolute; width:800px; height:800px; border-radius:50%; left:-220px; bottom:-260px; background: radial-gradient(circle at 50% 50%, rgba(240,180,100,0.32), transparent 60%); filter: blur(60px); opacity:0.9; pointer-events:none; }
+.section-num { font-family:var(--font-mono); font-size:12px; color:var(--purple); letter-spacing:0.24em; text-transform:uppercase; display:flex; align-items:center; gap:14px; position:relative; z-index:2; margin-bottom:14px; }
+.section-num .bar { width:36px; height:1px; background:var(--purple); opacity:0.6; }
+svg { position:relative; z-index:2; display:block; width:100%; height:auto; }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="grid-bg"></div>
+  <div class="orb"></div>
+  <div class="vignette"></div>
+
+  <div class="section-num"><span class="bar"></span>STATE MACHINE — A confidence gate decides who acts next</div>
+
+  <svg viewBox="0 0 1240 400" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <marker id="a-p" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7b7fff"/></marker>
+      <marker id="a-c" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#6ce0d6"/></marker>
+      <marker id="a-w" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#f0b464"/></marker>
+    </defs>
+
+    <rect x="0" y="40" width="160" height="80" rx="14" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.3)" stroke-width="1.4"/>
+    <text x="80" y="70" text-anchor="middle" fill="#7a7d90" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="2.5">01</text>
+    <text x="80" y="98" text-anchor="middle" fill="#eaeaf2" font-family="Inter Tight, sans-serif" font-size="18" font-weight="600">Idle</text>
+    <line x1="162" y1="80" x2="205" y2="80" stroke="#7b7fff" stroke-width="1.6" marker-end="url(#a-p)"/>
+
+    <rect x="208" y="40" width="180" height="80" rx="14" fill="rgba(123,127,255,0.09)" stroke="rgba(123,127,255,0.7)" stroke-width="1.4"/>
+    <text x="298" y="70" text-anchor="middle" fill="#a9acff" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="2.5">02</text>
+    <text x="298" y="98" text-anchor="middle" fill="#eaeaf2" font-family="Inter Tight, sans-serif" font-size="18" font-weight="600">Investigating</text>
+    <line x1="390" y1="80" x2="440" y2="80" stroke="#7b7fff" stroke-width="1.6" marker-end="url(#a-p)"/>
+
+    <polygon points="440,20 580,80 440,140 300,80" fill="none" opacity="0" />
+    <polygon points="530,20 620,80 530,140 440,80" fill="rgba(240,180,100,0.08)" stroke="rgba(240,180,100,0.8)" stroke-width="1.5"/>
+    <text x="530" y="70" text-anchor="middle" fill="#f0b464" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="2.5">03</text>
+    <text x="530" y="92" text-anchor="middle" fill="#eaeaf2" font-family="Inter Tight, sans-serif" font-size="15" font-weight="600">Confidence?</text>
+
+    <line x1="622" y1="80" x2="670" y2="80" stroke="#6ce0d6" stroke-width="1.6" marker-end="url(#a-c)"/>
+    <text x="646" y="65" text-anchor="middle" fill="#6ce0d6" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="1.5">HIGH</text>
+
+    <rect x="672" y="40" width="170" height="80" rx="14" fill="rgba(108,224,214,0.09)" stroke="rgba(108,224,214,0.75)" stroke-width="1.4"/>
+    <text x="757" y="70" text-anchor="middle" fill="#6ce0d6" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="2.5">04</text>
+    <text x="757" y="98" text-anchor="middle" fill="#eaeaf2" font-family="Inter Tight, sans-serif" font-size="18" font-weight="600">Executing</text>
+    <line x1="844" y1="80" x2="890" y2="80" stroke="#6ce0d6" stroke-width="1.6" marker-end="url(#a-c)"/>
+
+    <rect x="892" y="34" width="180" height="92" rx="14" fill="rgba(108,224,214,0.16)" stroke="#6ce0d6" stroke-width="2" filter="drop-shadow(0 0 22px rgba(108,224,214,0.3))"/>
+    <text x="982" y="68" text-anchor="middle" fill="#6ce0d6" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="2.5">05</text>
+    <text x="982" y="96" text-anchor="middle" fill="#eaeaf2" font-family="Inter Tight, sans-serif" font-size="18" font-weight="700">Resolved</text>
+
+    <path d="M 530 140 L 530 250" fill="none" stroke="#f0b464" stroke-width="1.6" stroke-dasharray="6 5" marker-end="url(#a-w)"/>
+    <text x="552" y="200" fill="#f0b464" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="1.5">LOW · NOTIFY</text>
+
+    <rect x="410" y="256" width="240" height="90" rx="14" fill="rgba(240,180,100,0.09)" stroke="rgba(240,180,100,0.75)" stroke-width="1.5"/>
+    <text x="530" y="288" text-anchor="middle" fill="#f0b464" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="2.5">PAUSED</text>
+    <text x="530" y="312" text-anchor="middle" fill="#eaeaf2" font-family="Inter Tight, sans-serif" font-size="15" font-weight="600">Waiting on human</text>
+
+    <path d="M 412 280 C 300 280 300 130 296 122" fill="none" stroke="#7b7fff" stroke-width="1.4" stroke-dasharray="5 5" marker-end="url(#a-p)"/>
+    <text x="300" y="200" fill="#a9acff" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="1.5">REDIRECT</text>
+
+    <path d="M 648 280 C 760 280 758 130 756 122" fill="none" stroke="#6ce0d6" stroke-width="1.4" stroke-dasharray="5 5" marker-end="url(#a-c)"/>
+    <text x="762" y="200" fill="#6ce0d6" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="1.5">CONFIRM</text>
+  </svg>
+</div>
+</body></html>

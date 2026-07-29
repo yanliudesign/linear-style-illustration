@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8" />
+<title>Example — Hub and Spoke</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400;1,700&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --stage-bg: #06070a; --slide-bg: #06070a;
+    --ink: #eaeaf2; --ink-dim: #7a7d90; --ink-mute: #464858;
+    --purple: #7b7fff; --cyan: #6ce0d6; --lilac: #b58bff; --warn: #f0b464;
+    --font-display: 'Carlito', 'Calibri', 'Inter Tight', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+* { box-sizing: border-box; }
+html,body { margin:0; background:var(--stage-bg); font-family:var(--font-display); }
+.canvas { position:relative; width:780px; height:292px; padding:22px 24px; overflow:hidden; }
+.grid-bg { position:absolute; inset:0; background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size:80px 80px; pointer-events:none; }
+.vignette { position:absolute; inset:0; background: radial-gradient(ellipse at 50% 50%, transparent 25%, rgba(0,0,0,0.65) 100%); pointer-events:none; }
+.orb { position:absolute; width:800px; height:800px; border-radius:50%; right:-160px; top:-160px; background: radial-gradient(circle at 35% 35%, rgba(108,224,214,0.45) 0%, transparent 55%); filter: blur(60px); opacity:0.9; pointer-events:none; }
+.section-num { font-family:var(--font-mono); font-size:12px; color:var(--cyan); letter-spacing:0.24em; text-transform:uppercase; display:flex; align-items:center; gap:14px; position:relative; z-index:2; margin-bottom:18px; }
+.section-num .bar { width:36px; height:1px; background:var(--cyan); opacity:0.6; }
+svg { position:relative; z-index:2; display:block; width:100%; height:auto; }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="grid-bg"></div>
+  <div class="orb"></div>
+  <div class="vignette"></div>
+
+  <div class="section-num"><span class="bar"></span>HUB AND SPOKE — A router coordinates specialist workers</div>
+
+  <svg viewBox="0 0 1240 420" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <marker id="arr-cyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#6ce0d6"/></marker>
+      <marker id="arr-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#7b7fff"/></marker>
+    </defs>
+
+    <rect x="0" y="169" width="130" height="42" rx="21" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.22)"/>
+    <text x="65" y="195" fill="#e8eeff" font-family="Inter Tight, sans-serif" font-size="16" text-anchor="middle" font-weight="600">Request</text>
+    <line x1="132" y1="190" x2="178" y2="190" stroke="#6ce0d6" stroke-width="1.5" marker-end="url(#arr-cyan)"/>
+
+    <rect x="180" y="160" width="190" height="60" rx="30" fill="rgba(108,224,214,0.16)" stroke="#6ce0d6" stroke-width="2" filter="drop-shadow(0 0 24px rgba(108,224,214,0.35))"/>
+    <text x="275" y="187" fill="#e8eeff" font-family="Inter Tight, sans-serif" font-size="18" text-anchor="middle" font-weight="700">Router</text>
+    <text x="275" y="205" fill="#6ce0d6" font-family="JetBrains Mono, monospace" font-size="10" text-anchor="middle" letter-spacing="2.5">COORDINATOR</text>
+
+    <line x1="370" y1="180" x2="470" y2="80" stroke="#b58bff" stroke-width="1.5" stroke-opacity="0.75" marker-end="url(#arr-purple)"/>
+    <rect x="472" y="58" width="180" height="44" rx="22" fill="rgba(181,139,255,0.10)" stroke="rgba(181,139,255,0.5)"/>
+    <text x="562" y="85" fill="#e8eeff" font-family="Inter Tight, sans-serif" font-size="15" text-anchor="middle" font-weight="600">Search Worker</text>
+
+    <line x1="370" y1="190" x2="470" y2="190" stroke="#b58bff" stroke-width="1.5" stroke-opacity="0.75" marker-end="url(#arr-purple)"/>
+    <rect x="472" y="168" width="180" height="44" rx="22" fill="rgba(181,139,255,0.10)" stroke="rgba(181,139,255,0.5)"/>
+    <text x="562" y="195" fill="#e8eeff" font-family="Inter Tight, sans-serif" font-size="15" text-anchor="middle" font-weight="600">Code Worker</text>
+
+    <line x1="370" y1="200" x2="470" y2="300" stroke="#b58bff" stroke-width="1.5" stroke-opacity="0.75" marker-end="url(#arr-purple)"/>
+    <rect x="472" y="278" width="180" height="44" rx="22" fill="rgba(181,139,255,0.10)" stroke="rgba(181,139,255,0.5)"/>
+    <text x="562" y="305" fill="#e8eeff" font-family="Inter Tight, sans-serif" font-size="15" text-anchor="middle" font-weight="600">Docs Worker</text>
+
+    <path d="M 656 80 C 760 80 780 150 830 175" fill="none" stroke="rgba(108,224,214,0.45)" stroke-width="1" stroke-dasharray="3 4"/>
+    <path d="M 656 190 L 830 190" fill="none" stroke="rgba(108,224,214,0.45)" stroke-width="1" stroke-dasharray="3 4"/>
+    <path d="M 656 300 C 760 300 780 230 830 205" fill="none" stroke="rgba(108,224,214,0.45)" stroke-width="1" stroke-dasharray="3 4"/>
+
+    <line x1="832" y1="190" x2="878" y2="190" stroke="#6ce0d6" stroke-width="1.5" marker-end="url(#arr-cyan)"/>
+    <rect x="880" y="150" width="200" height="80" rx="16" fill="rgba(255,255,255,0.06)" stroke="rgba(232,238,255,0.55)" stroke-width="1.5"/>
+    <text x="980" y="180" fill="#e8eeff" font-family="Inter Tight, sans-serif" font-size="18" text-anchor="middle" font-weight="600">Response</text>
+    <text x="980" y="202" fill="#a7abc0" font-family="Inter Tight, sans-serif" font-size="13" text-anchor="middle">Merged &amp; ranked</text>
+  </svg>
+</div>
+</body></html>
