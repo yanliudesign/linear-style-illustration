@@ -25,38 +25,38 @@ Not a generic diagramming tool. Not Mermaid, not a whiteboard export. This is th
 
 <p align="center">
   <img src="./examples/01-hub-and-spoke.png" width="100%" alt="Hub and spoke diagram">
-  <br><sub><b>Hub and spoke</b> — a router coordinates specialist workers</sub>
+  <br><sub><b>Hub and spoke</b> — a router coordinates specialist workers &nbsp; <code>hub-and-spoke</code></sub>
 </p>
 <p align="center">
   <img src="./examples/02-state-machine.png" width="100%" alt="State machine diagram">
-  <br><sub><b>State machine</b> — a confidence gate decides who acts next</sub>
+  <br><sub><b>State machine</b> — a confidence gate decides who acts next &nbsp; <code>state-machine</code></sub>
 </p>
 <p align="center">
   <img src="./examples/03-layered-stack.png" width="100%" alt="Layered stack diagram">
-  <br><sub><b>Layered stack</b> — a thin core sits under everything</sub>
+  <br><sub><b>Layered stack</b> — a thin core sits under everything &nbsp; <code>layered-stack</code></sub>
 </p>
 
 More examples, adapted (and redacted) from a real product pitch deck:
 
 <p align="center">
   <img src="./examples/08-workflow-shift.png" width="100%" alt="Workflow shift diagram">
-  <br><sub><b>Workflow shift</b> — a linear pipeline evolves into a coordinator hub once AI teammates join</sub>
+  <br><sub><b>Workflow shift</b> — a linear pipeline evolves into a coordinator hub once AI teammates join &nbsp; <code>workflow-shift</code></sub>
 </p>
 <p align="center">
   <img src="./examples/05-signal-convergence.png" width="100%" alt="Signal convergence diagram">
-  <br><sub><b>Signal convergence</b> — scattered signals are detected as one pattern, then routed into next steps</sub>
+  <br><sub><b>Signal convergence</b> — scattered signals are detected as one pattern, then routed into next steps &nbsp; <code>signal-convergence</code></sub>
 </p>
 <p align="center">
   <img src="./examples/06-fan-in-funnel.png" width="100%" alt="Fan-in funnel diagram">
-  <br><sub><b>Fan-in funnel</b> — many signals converge into one proposal, gated by a human decision</sub>
+  <br><sub><b>Fan-in funnel</b> — many signals converge into one proposal, gated by a human decision &nbsp; <code>fan-in-funnel</code></sub>
 </p>
 <p align="center">
   <img src="./examples/07-hierarchy-waterfall.png" width="100%" alt="Hierarchy waterfall diagram">
-  <br><sub><b>Hierarchy waterfall</b> — a new layer slotted into an existing org/work stack</sub>
+  <br><sub><b>Hierarchy waterfall</b> — a new layer slotted into an existing org/work stack &nbsp; <code>hierarchy-waterfall</code></sub>
 </p>
 <p align="center">
   <img src="./examples/04-status-panel.png" width="100%" alt="Status panel diagram">
-  <br><sub><b>Status panel</b> — a terminal-style readout for reporting system state</sub>
+  <br><sub><b>Status panel</b> — a terminal-style readout for reporting system state &nbsp; <code>status-panel</code></sub>
 </p>
 
 ## What's inside

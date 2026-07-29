@@ -25,38 +25,38 @@
 
 <p align="center">
   <img src="./examples/01-hub-and-spoke.png" width="100%" alt="Hub and spoke diagram">
-  <br><sub><b>Hub and spoke</b> —— 路由分发给多个专项 worker</sub>
+  <br><sub><b>Hub and spoke</b> —— 路由分发给多个专项 worker &nbsp; <code>hub-and-spoke</code></sub>
 </p>
 <p align="center">
   <img src="./examples/02-state-machine.png" width="100%" alt="State machine diagram">
-  <br><sub><b>State machine</b> —— 信心关卡决定下一步谁来处理</sub>
+  <br><sub><b>State machine</b> —— 信心关卡决定下一步谁来处理 &nbsp; <code>state-machine</code></sub>
 </p>
 <p align="center">
   <img src="./examples/03-layered-stack.png" width="100%" alt="Layered stack diagram">
-  <br><sub><b>Layered stack</b> —— 一个薄内核支撑起上层一切</sub>
+  <br><sub><b>Layered stack</b> —— 一个薄内核支撑起上层一切 &nbsp; <code>layered-stack</code></sub>
 </p>
 
 更多示例，改编（并脱敏）自一份真实的产品 pitch deck：
 
 <p align="center">
   <img src="./examples/08-workflow-shift.png" width="100%" alt="Workflow shift diagram">
-  <br><sub><b>Workflow shift</b> —— AI 队友加入后，线性流水线演变为协调中枢</sub>
+  <br><sub><b>Workflow shift</b> —— AI 队友加入后，线性流水线演变为协调中枢 &nbsp; <code>workflow-shift</code></sub>
 </p>
 <p align="center">
   <img src="./examples/05-signal-convergence.png" width="100%" alt="Signal convergence diagram">
-  <br><sub><b>Signal convergence</b> —— 分散信号被识别为同一个模式，再路由到下一步</sub>
+  <br><sub><b>Signal convergence</b> —— 分散信号被识别为同一个模式，再路由到下一步 &nbsp; <code>signal-convergence</code></sub>
 </p>
 <p align="center">
   <img src="./examples/06-fan-in-funnel.png" width="100%" alt="Fan-in funnel diagram">
-  <br><sub><b>Fan-in funnel</b> —— 多路信号汇聚成一个提案，由人工决策把关</sub>
+  <br><sub><b>Fan-in funnel</b> —— 多路信号汇聚成一个提案，由人工决策把关 &nbsp; <code>fan-in-funnel</code></sub>
 </p>
 <p align="center">
   <img src="./examples/07-hierarchy-waterfall.png" width="100%" alt="Hierarchy waterfall diagram">
-  <br><sub><b>Hierarchy waterfall</b> —— 新的一层被嵌入到已有的组织/工作层级中</sub>
+  <br><sub><b>Hierarchy waterfall</b> —— 新的一层被嵌入到已有的组织/工作层级中 &nbsp; <code>hierarchy-waterfall</code></sub>
 </p>
 <p align="center">
   <img src="./examples/04-status-panel.png" width="100%" alt="Status panel diagram">
-  <br><sub><b>Status panel</b> —— 终端风格的系统状态读数面板</sub>
+  <br><sub><b>Status panel</b> —— 终端风格的系统状态读数面板 &nbsp; <code>status-panel</code></sub>
 </p>
 
 ## 目录
