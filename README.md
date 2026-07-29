@@ -24,9 +24,16 @@ A design-taste skill that turns any system/flow/architecture idea into a **dark,
 Not a generic diagramming tool. Not Mermaid, not a whiteboard export. This is the disciplined, opinionated dark-tech look — output as a self-contained HTML file with inline SVG, ready to drop into a slide deck or export as a PNG.
 
 <p align="center">
-  <img src="./examples/01-hub-and-spoke.png" width="32%" alt="Hub and spoke diagram">
-  <img src="./examples/02-state-machine.png" width="32%" alt="State machine diagram">
-  <img src="./examples/03-layered-stack.png" width="32%" alt="Layered stack diagram">
+  <img src="./examples/01-hub-and-spoke.png" width="100%" alt="Hub and spoke diagram">
+  <br><sub><b>Hub and spoke</b> — a router coordinates specialist workers</sub>
+</p>
+<p align="center">
+  <img src="./examples/02-state-machine.png" width="100%" alt="State machine diagram">
+  <br><sub><b>State machine</b> — a confidence gate decides who acts next</sub>
+</p>
+<p align="center">
+  <img src="./examples/03-layered-stack.png" width="100%" alt="Layered stack diagram">
+  <br><sub><b>Layered stack</b> — a thin core sits under everything</sub>
 </p>
 
 ## What's inside

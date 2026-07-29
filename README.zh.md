@@ -24,9 +24,16 @@
 不是通用画图工具，不是 Mermaid，不是白板导出图。这是一种收敛、克制的暗色科技图风格——输出为一个自包含的 HTML 文件（内联 SVG），可以直接放进幻灯片，或截图导出成 PNG。
 
 <p align="center">
-  <img src="./examples/01-hub-and-spoke.png" width="32%" alt="Hub and spoke diagram">
-  <img src="./examples/02-state-machine.png" width="32%" alt="State machine diagram">
-  <img src="./examples/03-layered-stack.png" width="32%" alt="Layered stack diagram">
+  <img src="./examples/01-hub-and-spoke.png" width="100%" alt="Hub and spoke diagram">
+  <br><sub><b>Hub and spoke</b> —— 路由分发给多个专项 worker</sub>
+</p>
+<p align="center">
+  <img src="./examples/02-state-machine.png" width="100%" alt="State machine diagram">
+  <br><sub><b>State machine</b> —— 信心关卡决定下一步谁来处理</sub>
+</p>
+<p align="center">
+  <img src="./examples/03-layered-stack.png" width="100%" alt="Layered stack diagram">
+  <br><sub><b>Layered stack</b> —— 一个薄内核支撑起上层一切</sub>
 </p>
 
 ## 目录
