@@ -110,6 +110,16 @@ Restart Claude Code. Trigger phrases live at the top of [`SKILL.md`](./SKILL.md)
 - **Whimsical/hand-drawn illustrations** — opposite aesthetic; this is precise, technical, cold
 - **Org charts / dense enterprise diagrams** with 15+ nodes — this style caps out around 6–7 nodes per diagram
 
+## Why not just use Mermaid / Excalidraw?
+
+Generic diagramming tools optimize for *speed of expressing structure* — boxes and arrows, in whatever theme you pick. This skill optimizes for one very specific *look*: the dark, glowing "AI-OS" aesthetic you see in Linear-style keynotes, AI-agent product decks, and dark-mode landing pages.
+
+- **Mermaid** renders clean flowcharts, but every theme still reads as a flowchart — generic boxes, generic arrows, no glow, no orb backgrounds, no "kernel" emphasis. Great for expressing logic, wrong look for a keynote slide.
+- **Excalidraw** is fast and hand-drawn — perfect for whiteboard-style sketches, but that sketchy line-art look is the opposite of the precise, technical, cold aesthetic this skill produces.
+- **Flipping either tool to "dark mode"** just inverts colors. It doesn't give you pill-shaped nodes, one glowing hub, or a disciplined 2–3 color role system.
+
+Think of this less as a diagramming tool and more as a **design system for one specific illustration style**: fixed color roles (cyan/purple/lilac), exactly one glow per diagram, pill nodes only, self-contained HTML output with inline SVG — so every diagram comes out "keynote-ready" instead of just "a diagram."
+
 ## Delivery format
 
 One turn gives you a self-contained `.html` file (inline SVG, 1600–1920px canvas) using the boilerplate in `references/style-tokens.md` and the closest archetype in `references/patterns.md` — ready to open in a browser, embed in a slide deck, or screenshot to PNG.
